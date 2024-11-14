@@ -1,13 +1,12 @@
 <?php
     session_start();
 
-    // controllo se esiste la sessione, sennò la creo
     if (!isset($_SESSION['voti'])) {
         $_SESSION['voti'] = array();
         $_SESSION['numeroVoti'] = 0;
     }
 
-    // incremento il numero di voti ogni volta che invio il form
+
     $_SESSION['numeroVoti'] = $_SESSION['numeroVoti'] + 1;
 
     array_push($_SESSION['voti'], $_POST['voto']) ;
